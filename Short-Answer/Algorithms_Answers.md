@@ -29,4 +29,15 @@ c)  def bunnyEars(bunnies):
 
 ## Exercise II
 
+U - Phase
+What are we trying to do?
+A: Find out the highest floor(n) that an egg can be dropped from. If floor(n) > i.e 10: Egg Broke. 
+A: If our egg is broken at the floor we are on, we need to go downstairs 
+A: if our is not broken at the floor we are on, we need to go upstairs 
 
+P - Phase
+Step 1. If the egg is broken when dropped from middle value of floor(n) move to the current floor - 1 then repeat until return value is egg is not broken 
+Step 2. Do the opposite if the egg is not broken from the middle value floor(n) move to the current floor + 1 until return value is egg is broken 
+Step 3. If the return value is egg is broken move to the current value floor(n) - 1 then return the value 
+Run Time Complexity: O(log n) because as the size of the value of floor(n) increases, the space used will grow 
+at a slightly slower rate
