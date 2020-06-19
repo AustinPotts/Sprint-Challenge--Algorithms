@@ -97,6 +97,51 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+
+        # Bubble Sort - Current Item > Next Time?
+        # Compare the first and second item of a collection. 
+        # If the first item is bigger than the second item, swap the items
+        # Do this for every item until the end of the list
+        # turn the robot's light on to signal beginning of loop
+        self.set_light_on()
+
+        while self.light_is_on():
+            # remove the light so the robot can move
+            self.set_light_off()
+
+            # if the robot can move to the right
+            while self.can_move_right():
+
+                # move right and compare items
+                self.move_right()
+
+                # if the item being compared is greater
+                if self.compare_item() == 1:
+                    # pick it up, and turn on the light indicating move is over,
+                    # restarting the loop
+                    self.swap_item()
+                    self.set_light_on()
+
+            # if the robot can move to the left
+            # no more moves to the right
+            while self.can_move_left():
+                # pick up an item
+                self.swap_item()
+                # move to the left
+                self.move_left()
+
+                # compare the items if the item value is less than the value of the item being held
+                # swap items and turn light on indicating turn is over and restarting the loop.
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.set_light_on()
+                
+                # else move to right and swap items
+                # move back to left.
+                self.move_right()
+                self.swap_item()
+                self.move_left()
+
         pass
 
 
